@@ -1,6 +1,6 @@
 class Stone {
 
-    constructor (x,y,radius,angle) {
+    constructor (x,y,radius) {
 
         this.radius = radius;
 
@@ -25,6 +25,7 @@ class Stone {
         push();
         translate(pos.x,pos.y);
         rotate(angle);
+        ellipseMode(RADIUS);
         imageMode(CENTER);
         image(this.image,0,0,this.radius,this.radius);
         pop();

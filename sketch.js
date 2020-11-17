@@ -26,7 +26,7 @@ function setup() {
 
   ground = new Ground (1000,740,2000,100);
 
-  stone = new Stone (200,450,60,60);
+  stone = new Stone (200,450,60);
   
   catapult = new Catapult (stone.body,{x:210,y:540});
 
@@ -58,8 +58,6 @@ function draw() {
   image(boy,300,610,300,300);
 
   keyPressed();
-
-  detectcollision();
 
   ground.display();
 
@@ -116,7 +114,7 @@ function detectcollision(lstone,lmango) {
   stoneBodyPosition = lstone.body.position;
 
   var distance = dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y);
-console.log(distance);
+
   if (distance <=lmango.r+lstone.r) {
 
     Matter.Body.setStatic(lmango.body,false);

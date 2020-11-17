@@ -22,8 +22,10 @@ class Mango {
         var pos = this.body.position;
 
         push();
+        translate(pos.x,pos.y);
+        ellipseMode(RADIUS);
         imageMode(CENTER);
-        image(this.image,pos.x,pos.y,this.radius,this.radius);
+        image(this.image,0,0,this.radius,this.radius);
         pop();
 
     }
